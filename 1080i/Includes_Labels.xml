@@ -707,6 +707,13 @@
         <value condition="Integer.IsEqual(Player.Process(video.dovi.l5.detect.state),6)">L5 ($LOCALIZE[31993])</value>
     </variable>
 
+    <variable name="DVDualTrackVar">
+        <value condition="String.Contains(Player.Process(video.dovi.dual.track),dual)"> - $INFO[Player.Process(video.dovi.dual.track)]</value>
+        <value condition="String.IsEqual(Player.Process(video.dovi.dual.track),1)"> - Dual Track</value>
+        <value condition="String.IsEqual(Player.Process(video.dovi.dual.track),true)"> - Dual Track</value>
+        <value condition="String.IsEqual(Player.Process(video.dovi.dual.track),yes)"> - Dual Track</value>
+    </variable>
+
     <variable name="DVTunnelVar">
         <value condition="Integer.IsEqual(Player.Process(amlogic.vs10.mode.raw),1)">DV Tunnel</value>
     </variable>
