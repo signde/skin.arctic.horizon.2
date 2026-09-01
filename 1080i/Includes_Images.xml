@@ -23,6 +23,8 @@
     </variable>
 
     <variable name="Image_HDR_Codec">
+        <value condition="String.IsEqual(ListItem.HdrType,dolbyvision) + String.StartsWith(ListItem.DvProfile,7.) + String.Contains(ListItem.DvProfile,FEL)">other/dolbyvision_fel.png</value>
+        <value condition="String.IsEqual(ListItem.HdrType,dolbyvision) + String.StartsWith(ListItem.DvProfile,7.) + String.Contains(ListItem.DvProfile,MEL)">other/dolbyvision_mel.png</value>
         <value condition="String.IsEqual(ListItem.HdrType,dolbyvision)">other/dolbyvision.png</value>
         <value condition="String.IsEqual(ListItem.HdrType,hdr10)">other/hdr10.png</value>
         <value condition="String.IsEqual(ListItem.HdrType,hlg)">other/hlg.png</value>
@@ -380,16 +382,22 @@
     </variable>
 
     <variable name="Image_AudioCodec">
+        <value condition="String.IsEqual(ListItem.AudioCodec,truehd_atmos) | String.IsEqual(ListItem.AudioCodec,eac3_ddp_atmos)">audio/atmos.png</value>
+        <value condition="String.IsEqual(ListItem.AudioCodec,dtshd_ma_x) | String.IsEqual(ListItem.AudioCodec,dtshd_ma_x_imax)">audio/dtsx.png</value>
         <value condition="String.Contains(ListItem.FileNameAndPath,atmos)">audio/atmos.png</value>
         <value condition="String.Contains(ListItem.FileNameAndPath,dtsx) | String.Contains(ListItem.FileNameAndPath,dts-x) | String.Contains(ListItem.FileNameAndPath,dts:x)">audio/dtsx.png</value>
         <value>audio/$INFO[ListItem.AudioCodec].png</value>
     </variable>
     <variable name="Image_OSD_AudioCodec">
+        <value condition="String.IsEqual(VideoPlayer.AudioCodec,truehd_atmos) | String.IsEqual(VideoPlayer.AudioCodec,eac3_ddp_atmos)">audio/atmos.png</value>
+        <value condition="String.IsEqual(VideoPlayer.AudioCodec,dtshd_ma_x) | String.IsEqual(VideoPlayer.AudioCodec,dtshd_ma_x_imax)">audio/dtsx.png</value>
         <value condition="String.Contains(Player.FileNameAndPath,atmos)">audio/atmos.png</value>
         <value condition="String.Contains(Player.FileNameAndPath,dtsx) | String.Contains(Player.FileNameAndPath,dts-x) | String.Contains(Player.FileNameAndPath,dts:x)">audio/dtsx.png</value>
         <value>audio/$INFO[VideoPlayer.AudioCodec].png</value>
     </variable>
     <variable name="Image_OSD_AudioCodec_Mono">
+        <value condition="String.IsEqual(VideoPlayer.AudioCodec,truehd_atmos) | String.IsEqual(VideoPlayer.AudioCodec,eac3_ddp_atmos)">flags/monochrome/audio/atmos.png</value>
+        <value condition="String.IsEqual(VideoPlayer.AudioCodec,dtshd_ma_x) | String.IsEqual(VideoPlayer.AudioCodec,dtshd_ma_x_imax)">flags/monochrome/audio/dtsx.png</value>
         <value condition="String.Contains(Player.FileNameAndPath,atmos)">flags/monochrome/audio/atmos.png</value>
         <value condition="String.Contains(Player.FileNameAndPath,dtsx) | String.Contains(Player.FileNameAndPath,dts-x) | String.Contains(Player.FileNameAndPath,dts:x)">flags/monochrome/audio/dtsx.png</value>
         <value>flags/monochrome/audio/$INFO[VideoPlayer.AudioCodec].png</value>

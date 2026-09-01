@@ -936,6 +936,7 @@
     <include name="OSD_VideoSeekBar">
         <control type="group">
 
+
             <!-- Progress Bar Group -->
             <control type="group">
                 <include>OSD_Progress_Bar</include>
