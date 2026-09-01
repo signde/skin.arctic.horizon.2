@@ -594,6 +594,7 @@
                 <include content="Info_Codecs_MonoIcon">
                     <param name="colordiffuse">panel_fg_100</param>
                     <param name="icon">$VAR[Image_OSD_AudioCodec]</param>
+                    <param name="texture">$VAR[SigndeImage_OSD_AudioCodec]</param>
                     <param name="basewidth">56</param>
                     <param name="iconwidth">100</param>
                     <param name="iconheight">48</param>
@@ -935,6 +936,7 @@
 
     <include name="OSD_VideoSeekBar">
         <control type="group">
+
 
             <!-- Progress Bar Group -->
             <control type="group">

@@ -1263,6 +1263,7 @@
     </include>
 
     <include name="Info_Codecs_MonoIcon">
+        <param name="texture">flags/color/$PARAM[icon]</param>
         <param name="colordiffuse">white</param>
         <definition>
             <control type="group">
@@ -1275,7 +1276,7 @@
                     <width>$PARAM[iconwidth]</width>
                     <height>$PARAM[iconheight]</height>
                     <aspectratio>keep</aspectratio>
-                    <texture fallback="flags/generic.png" colordiffuse="$PARAM[colordiffuse]">flags/color/$PARAM[icon]</texture>
+                    <texture fallback="flags/generic.png" colordiffuse="$PARAM[colordiffuse]">$PARAM[texture]</texture>
                 </control>
                 <visible>$PARAM[visible]</visible>
             </control>
@@ -1410,6 +1411,7 @@
                 <!-- AudioCodec -->
                 <include content="Info_Codecs_MonoIcon" condition="!Skin.HasSetting(Codecs.DisableMediaCodecIcons)">
                     <param name="icon">$VAR[Image_AudioCodec]</param>
+                    <param name="texture">$VAR[SigndeImage_AudioCodec]</param>
                     <param name="basewidth">56</param>
                     <param name="iconwidth">100</param>
                     <param name="iconheight">48</param>
